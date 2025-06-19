@@ -13,6 +13,12 @@ app.use(cors({ credentials: true, origin: ["http://localhost:4175"] }));
 app.use(upload({ limits: { fileSize: 5 * 1024 * 1024 }, abortOnLimit: true, responseOnLimit: "File too large" }));
 app.use("/uploads", express.static("uploads"));
 app.use("/api", routes);
+
+// Add a friendly root route
+app.get('/', (req, res) => {
+  res.send('ShelfEx Social Media API is running!');
+});
+
 app.use(notFound);
 app.use(errorHandler);
 
