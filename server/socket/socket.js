@@ -6,7 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:4175",
+    origin: [
+      "http://localhost:4175",
+      "https://shelf-ex-project.vercel.app"
+    ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
   },
 });

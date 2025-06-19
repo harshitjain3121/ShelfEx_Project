@@ -12,7 +12,7 @@ export const SocketProvider = ({ children }) => {
     const currentUser = useSelector(state => state.user.currentUser?.user);
     useEffect(() => {
         if (!currentUser) return;
-        const Socket = io(`http://localhost:3333`, {
+        const Socket = io(`https://shelfex-project.onrender.com/api`, {
             transports: ["websocket"],
             auth: {
                 token: localStorage.getItem("token"),

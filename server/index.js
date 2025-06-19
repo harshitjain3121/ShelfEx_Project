@@ -9,7 +9,7 @@ const { app, server } = require("./socket/socket");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
-app.use(cors({ credentials: true, origin: ["http://localhost:4175"] }));
+app.use(cors({ credentials: true, origin: ["http://localhost:4175","https://shelf-ex-project.vercel.app"] }));
 app.use(upload({ limits: { fileSize: 5 * 1024 * 1024 }, abortOnLimit: true, responseOnLimit: "File too large" }));
 app.use("/uploads", express.static("uploads"));
 app.use("/api", routes);
